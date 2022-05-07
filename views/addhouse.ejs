@@ -1,0 +1,161 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container-flex signup-container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-md-6">
+      <div class="card signin-card">
+        <div class="card-header">
+          <h1
+            class="card-title"
+            style="color: black; text-decoration: underline"
+          >
+            Add House
+          </h1>
+        </div>
+
+        <div class="card-body">
+          <form action="/addhouse" enctype="multipart/form-data" method="post">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="inputFirstName4">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputFirstName4"
+                  placeholder="Name"
+                  name="name"
+                />
+              </div>
+              <div class="form-group col-md-8">
+                <label for="inputAddress">Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputAddress"
+                  placeholder="1234 Main St"
+                  name="address"
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="inputbedroom">Bedroom</label>
+                  <input
+                    type="number"
+                    min="0"
+                    value="0"
+                    class="form-control"
+                    id="inputbedroom"
+                    placeholder="0"
+                    name="bedroom"
+                  />
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputkitchen">Kitchen</label>
+                  <input
+                    type="number"
+                    min="0"
+                    value="0"
+                    class="form-control"
+                    id="inputkitchen"
+                    placeholder="0"
+                    name="kitchen"
+                  />
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputlivingroom">Living Room</label>
+                  <input
+                    type="number"
+                    min="0"
+                    value="0"
+                    class="form-control"
+                    id="inputlivingroom"
+                    placeholder="0"
+                    name="livingroom"
+                  />
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputparking">Parking</label>
+                  <input
+                    type="number"
+                    min="0"
+                    value="0"
+                    class="form-control"
+                    id="inputparking"
+                    placeholder="0"
+                    name="parking"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputLastName4">Picture 1</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="image1"
+                    value="null"
+                  />
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputLastName4">Picture 2</label>
+
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="image2"
+                    value="null"
+                  />
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label for="inputLastName4">Picture 3</label>
+
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="image3"
+                    value="null"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputdescription">Price</label>
+                <input
+                  type="number"
+                  min="0"
+                  class="form-control"
+                  id="inputdescription"
+                  placeholder="Price"
+                  name="price"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="inputdescription">Description</label>
+                <textarea
+                  class="form-control"
+                  id="inputdescription"
+                  placeholder="Describe the house"
+                  name="description"
+                  rowspan="3"
+                ></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">
+              Add Agent
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--<div class="col-sm-1"></div>
+          
+        </div>-->
+  </div>
+</div>

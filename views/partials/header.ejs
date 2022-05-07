@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Realestate Bootstrap Theme</title>
+    <title>E Gency</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="assets/style.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -40,11 +40,42 @@
       type="text/javascript"
       src="assets/slitslider/js/jquery.slitslider.js"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/search_table.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <!-- slitslider -->
+    <script>
+      $("#success-alert")
+        .fadeTo(2000, 500)
+        .slideUp(500, function () {
+          $("#success-alert").slideUp(500);
+        });
+      $("#danger-alert")
+        .fadeTo(2000, 500)
+        .slideUp(500, function () {
+          $("#danger-alert").slideUp(500);
+        });
+    </script>
   </head>
 
   <body>
     <!-- Header Starts -->
+
     <div class="navbar-wrapper">
       <div class="navbar-inverse" role="navigation">
         <div class="container">
@@ -65,14 +96,38 @@
           <!-- Nav Starts -->
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="/index">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/agents">Agents</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li class="nav-item active"><a href="/">Home</a></li>
+              <li class="nav-item"><a href="/about">About</a></li>
+              <li class="nav-item"><a href="/agents">Agents</a></li>
+              <li class="nav-item"><a href="/blog">Blog</a></li>
+              <li class="nav-item"><a href="/contact">Contact</a></li>
             </ul>
           </div>
           <!-- #Nav Ends -->
+          <%if(error && error.length>0){%>
+          <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">
+              &times;
+            </button>
+            <strong>Error!</strong> <%=error%>
+          </div>
+
+          <!-- <div
+            class="alert alert-danger"
+            id="danger-alert"
+            style="text-align: center"
+          >
+            <%=error%>
+          </div> -->
+          <%}if(success && success.length>0){%>
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">
+              &times;
+            </button>
+            <strong>Success!</strong> <%=success%>
+          </div>
+
+          <%}%>
         </div>
       </div>
     </div>
@@ -81,12 +136,29 @@
     <div class="container">
       <!-- Header Starts -->
       <div class="header">
-        <a href="index.php"><img src="images/logo.png" alt="Realestate" /></a>
+        <a href="/"
+          ><img src="images/logo.png" alt="Realestate" height="150px"
+        /></a>
 
         <ul class="pull-right">
-          <li><a href="/buysalerent">Buy</a></li>
+          <!-- <li><a href="/buysalerent">Buy</a></li>
           <li><a href="/buysalerent">Sale</a></li>
-          <li><a href="/buysalerent">Rent</a></li>
+          <li><a href="/buysalerent">Rent</a></li> -->
+          <% if(user) {%>
+          <li><a><%= user.Name %></a></li>
+          <li><a href="/logout">Log Out</a></li>
+          <li><a href="/addhouse">Add House</a></li>
+          <%} else {%>
+          <li>
+            <button
+              class="btn btn-info"
+              data-toggle="modal"
+              data-target="#loginpop"
+            >
+              Login
+            </button>
+          </li>
+          <% } %>
         </ul>
       </div>
       <!-- #Header Starts -->
