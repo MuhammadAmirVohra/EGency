@@ -1,0 +1,131 @@
+<%- include('partials/header.ejs') %>
+<!-- banner -->
+<div class="inside-banner">
+  <div class="container">
+    <span class="pull-right"><a href="/">Home</a></span>
+    <h2>All Houses</h2>
+  </div>
+</div>
+<!-- banner -->
+
+<div class="container">
+  <div class="properties-listing spacer">
+    <div class="row">
+      <div class="col-lg-3 col-sm-4">
+        <div class="search-form">
+          <form action="/filter" method="post">
+            <h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search of Properties"
+              name="search"
+              required
+            />
+            <div class="row">
+              <div class="col-lg-12">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Minimum Price"
+                  name="minimum"
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Maximum Price"
+                  name="maximum"
+                />
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Find Now</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-9 col-sm-8">
+        <div class="sortby clearfix">
+          <div class="pull-left result">
+            Total Results : <%= houses.length %>
+          </div>
+          <div class="pull-right">
+            <form action="/sort_values" method="post">
+              <select
+                class="form-control"
+                name="sort"
+                onchange="this.form.submit()"
+              >
+                <option disabled selected>Sort by</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+              </select>
+            </form>
+          </div>
+          </div>
+          <div class="row">
+            <!-- properties -->
+            <%for(var i = 0; i < houses.length; i++) {%>
+            <div class="col-lg-4 col-sm-6">
+              <div class="properties">
+                <div class="image-holder">
+                  <img
+                    src="data:image/jpg; base64, <%= houses[i].Image1 %>"
+                    class="img-responsive"
+                    alt="properties"
+                  />
+                </div>
+                <h4><a href="/property-detail"><%=houses[i].Name%></a></h4>
+                <p class="price">
+                  Price: Rs. <%=
+                  houses[i].Price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,
+                  ",") %>
+                </p>
+                <div class="listing-detail">
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    data-original-title="Bed Room"
+                    ><%=houses[i].Bedroom%></span
+                  >
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    data-original-title="Living Room"
+                    ><%=houses[i].Livingroom%></span
+                  >
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    data-original-title="Parking"
+                    ><%=houses[i].Parking%></span
+                  >
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    data-original-title="Kitchen"
+                    ><%=houses[i].Kitchen%></span
+                  >
+                </div>
+                <a
+                  class="btn btn-primary"
+                  href="/property-detail/<%=houses[i].ID%>"
+                  >View Details</a
+                >
+              </div>
+            </div>
+            <!-- properties -->
+            <%}%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer.ejs') %>
+</div>

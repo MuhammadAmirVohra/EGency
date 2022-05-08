@@ -2,8 +2,8 @@
 <!-- banner -->
 <div class="inside-banner">
   <div class="container">
-    <span class="pull-right"><a href="/">Home</a> / Buy</span>
-    <h2>Buy</h2>
+    <span class="pull-right"><a href="/">Home</a> </span>
+    <h2><%= data.Name %></h2>
   </div>
 </div>
 <!-- banner -->
@@ -12,68 +12,10 @@
   <div class="properties-listing spacer">
     <div class="row">
       <div class="col-lg-3 col-sm-4 hidden-xs">
-        <div class="hot-properties hidden-xs">
-          <h4>Hot Properties</h4>
-          <div class="row">
-            <div class="col-lg-4 col-sm-5">
-              <img
-                src="images/properties/4.jpg"
-                class="img-responsive img-circle"
-                alt="properties"
-              />
-            </div>
-            <div class="col-lg-8 col-sm-7">
-              <h5><a href="/property-detail">Integer sed porta quam</a></h5>
-              <p class="price">$300,000</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 col-sm-5">
-              <img
-                src="images/properties/1.jpg"
-                class="img-responsive img-circle"
-                alt="properties"
-              />
-            </div>
-            <div class="col-lg-8 col-sm-7">
-              <h5><a href="/property-detail">Integer sed porta quam</a></h5>
-              <p class="price">$300,000</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-4 col-sm-5">
-              <img
-                src="images/properties/3.jpg"
-                class="img-responsive img-circle"
-                alt="properties"
-              />
-            </div>
-            <div class="col-lg-8 col-sm-7">
-              <h5><a href="/property-detail">Integer sed porta quam</a></h5>
-              <p class="price">$300,000</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-4 col-sm-5">
-              <img
-                src="images/properties/2.jpg"
-                class="img-responsive img-circle"
-                alt="properties"
-              />
-            </div>
-            <div class="col-lg-8 col-sm-7">
-              <h5><a href="/property-detail">Integer sed porta quam</a></h5>
-              <p class="price">$300,000</p>
-            </div>
-          </div>
-        </div>
-
         <div class="advertisement">
           <h4>Advertisements</h4>
           <img
-            src="images/advertisements.jpg"
+            src="/images/advertisements.jpg"
             class="img-responsive"
             alt="advertisement"
           />
@@ -81,7 +23,6 @@
       </div>
 
       <div class="col-lg-9 col-sm-8">
-        <h2>2 room and 1 kitchen apartment</h2>
         <div class="row">
           <div class="col-lg-8">
             <div class="property-images">
@@ -96,13 +37,12 @@
                   ></li>
                   <li data-target="#myCarousel" data-slide-to="1" class=""></li>
                   <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-                  <li data-target="#myCarousel" data-slide-to="3" class=""></li>
                 </ol>
                 <div class="carousel-inner">
                   <!-- Item 1 -->
                   <div class="item active">
                     <img
-                      src="images/properties/4.jpg"
+                      src="data:image/jpg; base64, <%= data.Image1 %>"
                       class="properties"
                       alt="properties"
                     />
@@ -112,7 +52,7 @@
                   <!-- Item 2 -->
                   <div class="item">
                     <img
-                      src="images/properties/2.jpg"
+                      src="data:image/jpg; base64, <%= data.Image2 %>"
                       class="properties"
                       alt="properties"
                     />
@@ -122,22 +62,12 @@
                   <!-- Item 3 -->
                   <div class="item">
                     <img
-                      src="images/properties/1.jpg"
+                      src="data:image/jpg; base64, <%= data.Image3 %>"
                       class="properties"
                       alt="properties"
                     />
                   </div>
                   <!-- #Item 3 -->
-
-                  <!-- Item 4 -->
-                  <div class="item">
-                    <img
-                      src="images/properties/3.jpg"
-                      class="properties"
-                      alt="properties"
-                    />
-                  </div>
-                  <!-- # Item 4 -->
                 </div>
                 <a
                   class="left carousel-control"
@@ -160,26 +90,31 @@
                 <span class="glyphicon glyphicon-th-list"></span> Properties
                 Detail
               </h4>
-              <p>
-                Efficiently unleash cross-media information without cross-media
-                value. Quickly maximize timely deliverables for real-time
-                schemas. Dramatically maintain clicks-and-mortar solutions
-                without functional solutions.
-              </p>
-              <p>
-                Completely synergize resource sucking relationships via premier
-                niche markets. Professionally cultivate one-to-one customer
-                service with robust ideas. Dynamically innovate
-                resource-leveling customer service for state of the art customer
-                service
-              </p>
+              <p><%= data.Description %></p>
             </div>
-            <div>
+            <!--  <div>
               <h4>
                 <span class="glyphicon glyphicon-map-marker"></span> Location
               </h4>
-              <div class="well">
-                <iframe
+              <div class="well"> 
+                 <div id="googleMap" style="width: 100%; height: 400px"></div>
+
+                <script>
+                  function myMap() {
+                    var mapProp = {
+                      center: new google.maps.lo(),
+                      zoom: 5,
+                    };
+                    var map = new google.maps.Map(
+                      document.getElementById("googleMap"),
+                      mapProp
+                    );
+                  }
+                </script>
+
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjPFoBhwldbOmQRZb9GarMBcIVHoaqoG8&callback=myMap"></script> -->
+
+            <!-- <iframe
                   width="100%"
                   height="350"
                   frameborder="0"
@@ -187,22 +122,25 @@
                   marginheight="0"
                   marginwidth="0"
                   src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Pulchowk,+Patan,+Central+Region,+Nepal&amp;aq=0&amp;oq=pulch&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Pulchowk,+Patan+Dhoka,+Patan,+Bagmati,+Central+Region,+Nepal&amp;ll=27.678236,85.316853&amp;spn=0.001347,0.002642&amp;t=m&amp;z=14&amp;output=embed"
-                ></iframe>
+                ></iframe> -
               </div>
-            </div>
+            </div>-->
           </div>
           <div class="col-lg-4">
             <div class="col-lg-12 col-sm-6">
               <div class="property-info">
-                <p class="price">$ 200,000,000</p>
+                <p class="price">
+                  Rs. <%= data.Price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,
+                  ",") %>
+                </p>
                 <p class="area">
-                  <span class="glyphicon glyphicon-map-marker"></span> 344
-                  Villa, Syndey, Australia
+                  <span class="glyphicon glyphicon-map-marker"></span>
+                  <%= data.Address %>
                 </p>
 
                 <div class="profile">
                   <span class="glyphicon glyphicon-user"></span> Agent Details
-                  <p>John Parker<br />009 229 2929</p>
+                  <p><%= data.Person %><br /><%= data.Contact %></p>
                 </div>
               </div>
 
@@ -214,25 +152,25 @@
                   data-toggle="tooltip"
                   data-placement="bottom"
                   data-original-title="Bed Room"
-                  >5</span
+                  ><%= data.Bedroom %></span
                 >
                 <span
                   data-toggle="tooltip"
                   data-placement="bottom"
                   data-original-title="Living Room"
-                  >2</span
+                  ><%= data.Livingroom %></span
                 >
                 <span
                   data-toggle="tooltip"
                   data-placement="bottom"
                   data-original-title="Parking"
-                  >2</span
+                  ><%= data.Parking %></span
                 >
                 <span
                   data-toggle="tooltip"
                   data-placement="bottom"
                   data-original-title="Kitchen"
-                  >1</span
+                  ><%= data.Kitchen %></span
                 >
               </div>
             </div>

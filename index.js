@@ -28,6 +28,8 @@ app.use(function (req, res, next) {
 
 
 const mysql = require('mysql');
+const e = require('connect-flash');
+const { query } = require('express');
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -75,7 +77,19 @@ app.use(function (req, res, next) {
 
 
 app.get('/', (req, res) => {
-    res.render("index", { user: req.user });
+
+
+    connection.query('Select * from houses;', (err, data) => {
+        if (err) {
+            console.log(err);
+            req.flash("error", err.message);
+            res.send(err.message);
+        }
+        else {
+            res.render('index', { user: req.user, houses: data });
+        }
+    })
+
 })
 
 // app.get('/success', (req, res) => {
@@ -103,7 +117,7 @@ app.get('/logout', checkAuthenticated, function (req, res) {
 
 
 
-app.get('/addagent', (req, res) => {
+app.get('/addagent', checkadmin, (req, res) => {
     res.render("addagent", { user: req.user });
 })
 
@@ -132,7 +146,7 @@ app.get('/addhouse', checkAuthenticated, (req, res) => {
 
 app.post('/addhouse', upload.fields([{ name: 'image1' }, { name: 'image2' }, { name: 'image3' }]), (req, res) => {
 
-    console.log(req.files)
+
 
     connection.query("INSERT INTO houses (`Name`, `UserID`, `Address`, `Image1`, `Bedroom`, `Livingroom`, `Parking`, `Kitchen`, `Price`, `Description`, `Image2`, `Image3`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);  ",
         [req.body.name, req.user.ID, req.body.address, req.files['image1'] ? req.files['image1'][0].buffer.toString('base64') : "NULL", req.body.bedroom, req.body.livingroom, req.body.parking, req.body.kitchen, req.body.price, req.body.description, req.files['image2'] ? req.files['image2'][0].buffer.toString('base64') : "NULL", req.files['image3'] ? req.files['image3'][0].buffer.toString('base64') : "NULL"],
@@ -167,6 +181,88 @@ app.get('/about', (req, res) => {
     res.render('about', { user: req.user })
 })
 
+app.get("/property-detail/:id", (req, res) => {
+    connection.query('select h.Address, u.Address as PersonAddress, h.Name, u.Name as Person, Livingroom, Kitchen, Bedroom, Parking, Description, Contact, Price, Image1, Image2, Image3 from houses as h inner join users as u on u.ID = h.UserID where h.ID = ? ;', [req.params.id], (err, data) => {
+        if (err) {
+            req.flash("error", err.message)
+            res.redirect('/');
+        }
+        else {
+            console.log(data);
+            res.render('property-detail', { user: req.user, data: data[0] });
+
+        }
+    })
+});
+
+
+app.get('/contact', (req, res) => {
+    res.render('contact', { user: req.user })
+})
+
+app.get('/allhouses', (req, res) => {
+    connection.query('Select * from houses;', (err, data) => {
+        if (err) {
+            req.flash("error", err.message)
+            res.redirect('/');
+        }
+        else {
+            res.render('allhouses', { user: req.user, houses: data })
+
+        }
+    })
+})
+var filter_data = null;
+app.post('/filter', async (req, res) => {
+    var query = "Select * from houses where Name like '%" + req.body.search + "%'"
+    if (req.body.minimum.length)
+        query += " and Price >= " + req.body.minimum
+    if (req.body.maximum.length)
+        query += " and Price <= " + req.body.maximum
+
+
+    await connection.query(query, (err, data) => {
+        if (err) {
+            req.flash("error", err.message);
+            res.redirect('/allhouses')
+        }
+        else {
+            filter_data = req.body;
+            res.render('allhouses', { user: req.user, houses: data })
+        }
+    })
+
+})
+
+app.post('/sort_values', async (req, res) => {
+    var query = "Select * from houses"
+    if (filter_data) {
+        query += " where Name like '%" + filter_data.search + "%'"
+        if (filter_data.minimum.length)
+            query += " and Price >= " + req.body.minimum
+        if (filter_data.maximum.length)
+            query += " and Price <= " + req.body.maximum
+    }
+    if (req.body.sort != "Sort by") {
+        query += " order by Price "
+        if (req.body.sort == 'Price: Low to High')
+            query += " ASC"
+        else
+            query += " DSC"
+    }
+    console.log(query)
+
+    await connection.query(query, (err, data) => {
+        if (err) {
+            req.flash("error", err.message);
+            res.redirect('/allhouses')
+        }
+        else {
+            res.render('allhouses', { user: req.user, houses: data })
+        }
+    })
+})
+
 app.listen(process.env.port || 5000, () => {
     console.log("App Started at port 5000");
 });
@@ -184,4 +280,18 @@ function checkNotAuthenticated(req, res, next) {
         return res.redirect("/");
     }
     next();
+}
+
+function checkadmin(req, res, next) {
+    if (req.isAuthenticated()) {
+        if (req.user.ID == 1) {
+            next();
+
+        }
+        else
+            return res.redirect("/");
+
+    }
+    return res.redirect("/");
+
 }
