@@ -284,7 +284,7 @@ app.get('/get_houses_data', (req, res) => {
 })
 
 
-app.listen(process.env.port || 5000, () => {
+app.listen(process.env.port || process.env.PORT || 5000, () => {
     console.log("App Started at port 5000");
 });
 
