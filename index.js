@@ -300,13 +300,15 @@ function checkNotAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return res.redirect("/");
     }
-    next();
+    return next();
 }
 
 function checkadmin(req, res, next) {
     if (req.isAuthenticated()) {
+        console.log("Authenticated");
+        console.log(req.user);
         if (req.user.ID == 1) {
-            next();
+            return next();
 
         }
         else
