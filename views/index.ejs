@@ -69,82 +69,6 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-  <!-- <div
-        class="sl-slide"
-        data-orientation="horizontal"
-        data-slice1-rotation="-25"
-        data-slice2-rotation="-25"
-        data-slice1-scale="2"
-        data-slice2-scale="2"
-      >
-        <div class="sl-slide-inner">
-          <div class="bg-img bg-img-1"></div>
-          
-        </div>
-      </div>
-
-      <div
-        class="sl-slide"
-        data-orientation="vertical"
-        data-slice1-rotation="10"
-        data-slice2-rotation="-15"
-        data-slice1-scale="1.5"
-        data-slice2-scale="1.5"
-      >
-        <div class="sl-slide-inner">
-          <div class="bg-img bg-img-2"></div>
-        
-        </div>
-      </div>
-
-      <div
-        class="sl-slide"
-        data-orientation="horizontal"
-        data-slice1-rotation="3"
-        data-slice2-rotation="3"
-        data-slice1-scale="2"
-        data-slice2-scale="1"
-      >
-        <div class="sl-slide-inner">
-          <div class="bg-img bg-img-3"></div>
-         
-        </div>
-      </div>
-
-      <div
-        class="sl-slide"
-        data-orientation="vertical"
-        data-slice1-rotation="-5"
-        data-slice2-rotation="25"
-        data-slice1-scale="2"
-        data-slice2-scale="1"
-      >
-        <div class="sl-slide-inner">
-          <div class="bg-img bg-img-4"></div>
-          
-        </div>
-      </div>
-
-      <div
-        class="sl-slide"
-        data-orientation="horizontal"
-        data-slice1-rotation="-5"
-        data-slice2-rotation="10"
-        data-slice1-scale="2"
-        data-slice2-scale="1"
-      >
-        <div class="sl-slide-inner">
-          <div class="bg-img bg-img-5"></div>
-       
-         
-        </div> -->
-
-  <!-- </div>   -->
-  <!-- </div></div> -->
-  <!-- /sl-slider -->
-  <!-- </div> -->
-  <!-- /slider-wrapper -->
-  <!-- </div> -->
 
   <div class="banner-search">
     <div class="container"></div>
@@ -154,7 +78,12 @@
     <div class="properties-listing spacer">
       <a href="/allhouses" class="pull-right viewall">View All Listing</a>
       <h2>Featured Properties</h2>
-      <div id="owl-example" class="owl-carousel">
+      <script>
+        $(document).ready(function () {
+          $(".owl-carousel").owlCarousel();
+        });
+      </script>
+      <div id="owl-example" class="owl-carousel owl-theme">
         <% for(var i = 0; i < houses.length; i++) {%>
         <div class="properties">
           <div class="image-holder">
