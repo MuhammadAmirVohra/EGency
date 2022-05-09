@@ -32,11 +32,17 @@ const e = require('connect-flash');
 const { query } = require('express');
 
 const connection = mysql.createConnection({
-    host: "localhost",
+    // host: "localhost",
+    // port: 3306,
+    // user: "root",
+    // password: "admin",
+    // database: "sys"
+
+    host: "db4free.net",
     port: 3306,
-    user: "root",
-    password: "admin",
-    database: "sys"
+    user: "rootuser_egency",
+    password: "Admin123",
+    database: "egency_database"
 });
 
 connection.connect(function (err) {
@@ -262,6 +268,21 @@ app.post('/sort_values', async (req, res) => {
         }
     })
 })
+
+
+app.get('/get_houses_data', (req, res) => {
+    console.log("Android App Request")
+    connection.query('Select * from houses', (err, data) => {
+        if (err) {
+            console.log(err.message);
+        }
+        else {
+            console.log(data);
+            res.send(data);
+        }
+    })
+})
+
 
 app.listen(process.env.port || 5000, () => {
     console.log("App Started at port 5000");
