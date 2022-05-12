@@ -138,7 +138,7 @@
           <li><a href="/buysalerent">Sale</a></li>
           <li><a href="/buysalerent">Rent</a></li> -->
           <% if(user) {%>
-          <li><a><%= user.Name %></a></li>
+          <li><a href="/editprofile"><%= user.Name %></a></li>
           <li><a href="/logout">Log Out</a></li>
           <li><a href="/addhouse">Add House</a></li>
           <%} else {%>

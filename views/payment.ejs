@@ -18,11 +18,28 @@
       rel="stylesheet"
     />
     <!--Bootstrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>       
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
@@ -30,45 +47,43 @@
     />
 
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
-
     <!-- Payment Form -->
-<style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-    
-    * {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Poppins', sans-serif
-    }
-    
-    .container {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .container {
         margin: 30px auto;
-    }
-    
-    .container .card {
+      }
+
+      .container .card {
         width: 100%;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         background: #fff;
         border-radius: 0px;
-    }
-    
-    body {
-        background: #eee
-    }
-    
-    
-    
-    .btn.btn-primary {
+      }
+
+      body {
+        background: #eee;
+      }
+
+      .btn.btn-primary {
         background-color: #ddd;
         color: black;
         box-shadow: none;
@@ -76,61 +91,61 @@
         font-size: 20px;
         width: 100%;
         height: 100%;
-    }
-    
-    .btn.btn-primary:focus {
+      }
+
+      .btn.btn-primary:focus {
         box-shadow: none;
-    }
-    
-    .container .card .img-box {
+      }
+
+      .container .card .img-box {
         width: 80px;
         height: 50px;
-    }
-    
-    .container .card img {
+      }
+
+      .container .card img {
         width: 100%;
         object-fit: fill;
-    }
-    
-    .container .card .number {
+      }
+
+      .container .card .number {
         font-size: 24px;
-    }
-    
-    .container .card-body .btn.btn-primary .fab.fa-cc-paypal {
+      }
+
+      .container .card-body .btn.btn-primary .fab.fa-cc-paypal {
         font-size: 32px;
-        color: #519B37;
-    }
-    
-    .fab.fa-cc-amex {
-        color: #519B37;
+        color: #519b37;
+      }
+
+      .fab.fa-cc-amex {
+        color: #519b37;
         font-size: 32px;
-    }
-    
-    .fab.fa-cc-mastercard {
+      }
+
+      .fab.fa-cc-mastercard {
         font-size: 32px;
         color: red;
-    }
-    
-    .fab.fa-cc-discover {
+      }
+
+      .fab.fa-cc-discover {
         font-size: 32px;
         color: orange;
-    }
-    
-    .c-green {
+      }
+
+      .c-green {
         color: green;
-    }
-    
-    .box {
+      }
+
+      .box {
         height: 40px;
         width: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: #ddd;
-    }
-    
-    .btn.btn-primary.payment {
-        background-color: #519B37;
+      }
+
+      .btn.btn-primary.payment {
+        background-color: #519b37;
         color: white;
         border-radius: 0px;
         height: 50px;
@@ -138,189 +153,261 @@
         align-items: center;
         justify-content: center;
         margin-top: 24px;
-    }
-    
-    
-    .form__div {
+      }
+
+      .form__div {
         height: 50px;
         position: relative;
         margin-bottom: 24px;
-    }
-    
-    .form-control {
+      }
+
+      .form-control {
         width: 100%;
         height: 45px;
         font-size: 14px;
-        border: 1px solid #DADCE0;
+        border: 1px solid #dadce0;
         border-radius: 0;
         outline: none;
         padding: 2px;
         background: none;
         z-index: 1;
         box-shadow: none;
-    }
-    
-    .form__label {
+      }
+
+      .form__label {
         position: absolute;
         left: 16px;
         top: 10px;
         background-color: #fff;
-        color: #80868B;
+        color: #80868b;
         font-size: 16px;
-        transition: .3s;
+        transition: 0.3s;
         text-transform: uppercase;
-    }
-    
-    .form-control:focus+.form__label {
+      }
+
+      .form-control:focus + .form__label {
         top: -8px;
         left: 12px;
-        color: #519B37;
+        color: #519b37;
         font-size: 12px;
         font-weight: 500;
         z-index: 10;
-    }
-    
-    .form-control:not(:placeholder-shown).form-control:not(:focus)+.form__label {
+      }
+
+      .form-control:not(:placeholder-shown).form-control:not(:focus)
+        + .form__label {
         top: -8px;
         left: 12px;
         font-size: 12px;
         font-weight: 500;
         z-index: 10;
-    }
-    
-    .form-control:focus {
-        border: 1.5px solid #519B37;
+      }
+
+      .form-control:focus {
+        border: 1.5px solid #519b37;
         box-shadow: none;
-    }
-    
+      }
     </style>
-    
+    <%if(error && error.length>0){%>
+    <div class="alert alert-danger alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Error!</strong> <%=error%>
+    </div>
 
-   
+    <!-- <div
+            class="alert alert-danger"
+            id="danger-alert"
+            style="text-align: center"
+          >
+            <%=error%>
+          </div> -->
+    <%}if(success && success.length>0){%>
+    <div class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Success!</strong> <%=success%>
+    </div>
 
+    <%}%>
     <div class="container">
-        <a href="/"><img src="/images/logo.png" height="250px" alt="Home" /></a>
-        <div class="row">
-            <div class="col-lg-4 mb-lg-0 mb-3">
-                <div class="card p-3">
-                    <div class="img-box">
-                        <img src="https://www.freepnglogos.com/uploads/visa-logo-download-png-21.png" alt="">
-                    </div>
-                     
-                </div>
+      <a href="/"><img src="/images/logo.png" height="250px" alt="Home" /></a>
+      <div class="row">
+        <div class="col-lg-4 mb-lg-0 mb-3">
+          <div class="card p-3">
+            <div class="img-box">
+              <img
+                src="https://www.freepnglogos.com/uploads/visa-logo-download-png-21.png"
+                alt=""
+              />
             </div>
-            <div class="col-lg-4 mb-lg-0 mb-3">
-                <div class="card p-3">
-                    <div class="img-box">
-                        <img src="https://www.freepnglogos.com/uploads/mastercard-png/file-mastercard-logo-svg-wikimedia-commons-4.png"
-                            alt="">
-                    </div>
-                   
-                   
-                </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-lg-0 mb-3">
+          <div class="card p-3">
+            <div class="img-box">
+              <img
+                src="https://www.freepnglogos.com/uploads/mastercard-png/file-mastercard-logo-svg-wikimedia-commons-4.png"
+                alt=""
+              />
             </div>
-            <div class="col-lg-4 mb-lg-0 mb-3">
-                <div class="card p-3">
-                    <div class="img-box">
-                        <img src="https://www.freepnglogos.com/uploads/discover-png-logo/credit-cards-discover-png-logo-4.png"
-                            alt="">
-                    </div>
-                   
-                </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-lg-0 mb-3">
+          <div class="card p-3">
+            <div class="img-box">
+              <img
+                src="https://www.freepnglogos.com/uploads/discover-png-logo/credit-cards-discover-png-logo-4.png"
+                alt=""
+              />
             </div>
-            <div class="col-12 mt-4">
-                <div class="card p-3">
-                    <p class="mb-0 fw-bold h4">Payment Methods</p>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card p-3">
-                    
-                    <div class="card-body border p-0">
-                        <p>
-                            <a class="btn btn-primary p-2 w-100 h-100 d-flex align-items-center justify-content-between"
-                                data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
-                                aria-controls="collapseExample">
-                                <span class="fw-bold">Credit Card</span>
-                                <span class="">
-                                    <span class="fab fa-cc-amex"></span>
-                                    <span class="fab fa-cc-mastercard"></span>
-                                    <span class="fab fa-cc-discover"></span>
-                                </span>
-                            </a>
-                        </p>
-                        <div class="collapse show p-3 pt-0" id="collapseExample">
-                            <div class="row">
-                                <div class="col-lg-5 mb-lg-0 mb-3">
-                                    <p class="h4 mb-0">Summary</p>
-                                    <p class="mb-0"><span class="fw-bold">Subscription Package :</span><span class="c-green"> <%=Plan%></span>
-                                    </p>
-                                    <p class="mb-0">
-                                        <span class="fw-bold">Price:</span>
-                                        <span class="c-green">Rs. <%=
-                                            Price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,
-                                            ",") %></span>
-                                    </p>
-                                    <p class="mb-0">
-                                        Note : Initial amount Rs. 500 will be charged for the verification process.
-                                        <br />
-                                        After the process completes per month subscription charges will be charged.
-                                    </p>
-                                </div>
-                                <div class="col-lg-7">
-                                    <form action="/cardpayment" method="post" class="form">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="form__div">
-                                                    <input type="text" value="" class="form-control" name="card_number" placeholder=" " required>
-                                                    <label for="" class="form__label">Card Number</label>
-                                                </div>
-                                            </div>
-      
-                                            <div class="col-4">
-                                                <div class="form__div">
-                                                    <input type="number" min="1" max="12" value="1" name="expiry_month" class="form-control" placeholder=" " required> 
-                                                    <label for="" class="form__label">Expire : Month</label>
-                                                </div>
-                                            </div>
-      
-                                            <div class="col-4">
-                                                <div class="form__div">
-                                                    <input type="number" min="2022" name="expiry_year" value="2022" class="form-control" placeholder=" " required>
-                                                    <label for="" class="form__label">Expire : Year</label>
-                                                </div>
-                                            </div>
-      
-                                            <div class="col-4">
-                                                <div class="form__div">
-                                                    <input type="password" value="" class="form-control" name="cvv" placeholder=" " required>
-                                                    <label for="" class="form__label">CVV code</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form__div">
-                                                    <input type="text" value="" class="form-control" name="cardholder" placeholder=" ">
-                                                    <label for="" class="form__label">Name on the card</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <button class="btn btn-primary w-100">Sumbit</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <div class="card p-3">
+            <p class="mb-0 fw-bold h4">Payment Methods</p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card p-3">
+            <div class="card-body border p-0">
+              <p>
+                <a
+                  class="btn btn-primary p-2 w-100 h-100 d-flex align-items-center justify-content-between"
+                  data-bs-toggle="collapse"
+                  href="#collapseExample"
+                  role="button"
+                  aria-expanded="true"
+                  aria-controls="collapseExample"
+                >
+                  <span class="fw-bold">Credit Card</span>
+                  <span class="">
+                    <span class="fab fa-cc-amex"></span>
+                    <span class="fab fa-cc-mastercard"></span>
+                    <span class="fab fa-cc-discover"></span>
+                  </span>
+                </a>
+              </p>
+              <div class="collapse show p-3 pt-0" id="collapseExample">
+                <div class="row">
+                  <div class="col-lg-5 mb-lg-0 mb-3">
+                    <p class="h4 mb-0">Summary</p>
+                    <p class="mb-0">
+                      <span class="fw-bold">Subscription Package :</span
+                      ><span class="c-green"> <%=Plan%></span>
+                    </p>
+                    <p class="mb-0">
+                      <span class="fw-bold">Price:</span>
+                      <span class="c-green"
+                        >Rs. <%=
+                        Price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                        %></span
+                      >
+                    </p>
+                    <p class="mb-0">
+                      Note : Initial amount Rs. 500 will be charged for the
+                      verification process.
+                      <br />
+                      After the process completes per month subscription charges
+                      will be charged.
+                    </p>
+                  </div>
+                  <div class="col-lg-7">
+                    <form action="/cardpayment" method="post" class="form">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form__div">
+                            <input
+                              type="text"
+                              value=""
+                              class="form-control"
+                              name="card_number"
+                              placeholder=" "
+                              required
+                            />
+                            <label for="" class="form__label"
+                              >Card Number</label
+                            >
+                          </div>
                         </div>
-                    </div>
+
+                        <div class="col-4">
+                          <div class="form__div">
+                            <input
+                              type="number"
+                              min="1"
+                              max="12"
+                              value="1"
+                              name="expiry_month"
+                              class="form-control"
+                              placeholder=" "
+                              required
+                            />
+                            <label for="" class="form__label"
+                              >Expire : Month</label
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-4">
+                          <div class="form__div">
+                            <input
+                              type="number"
+                              min="2022"
+                              name="expiry_year"
+                              value="2022"
+                              class="form-control"
+                              placeholder=" "
+                              required
+                            />
+                            <label for="" class="form__label"
+                              >Expire : Year</label
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-4">
+                          <div class="form__div">
+                            <input
+                              type="password"
+                              value=""
+                              class="form-control"
+                              name="cvv"
+                              placeholder=" "
+                              required
+                            />
+                            <label for="" class="form__label">CVV code</label>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form__div">
+                            <input
+                              type="text"
+                              value=""
+                              class="form-control"
+                              name="cardholder"
+                              placeholder=" "
+                            />
+                            <label for="" class="form__label"
+                              >Name on the card</label
+                            >
+                          </div>
+                        </div>
+                        <input type="hidden" name="price" value="<%=Price%>" />
+                        <input type="hidden" name="plan" value="<%=Plan%>" />
+                        <div class="col-12">
+                          <button class="btn btn-primary w-100">Sumbit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="col-12">
-                <div class="btn btn-primary payment">
-                    Make Payment
-                </div>
-            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="btn btn-primary payment">Make Payment</div>
         </div>
       </div>
+    </div>
   </body>
 </html>
-
