@@ -263,7 +263,7 @@ p {
     background: #f7f7f7;
 }
 
-.pricing-table.table-5 .ptable-action a {
+.pricing-table.table-5 .ptable-action button {
     display: inline-block;
     padding: 10px 20px;
     color: white;
@@ -273,21 +273,21 @@ p {
     background: #519B37;
 }
 
-.pricing-table.table-5 .ptable-action a i {
+.pricing-table.table-5 .ptable-action button i {
     margin-right: 5px;
 }
 
-.pricing-table.table-5 .ptable-action a:hover {
+.pricing-table.table-5 .ptable-action button:hover {
     color: #519B37;
     background: white;
 }
 
-.pricing-table.table-5 .ptable-item.featured-item .ptable-action a {
+.pricing-table.table-5 .ptable-item.featured-item .ptable-action button {
     color: white;
     background: #519B37;
 }
 
-.pricing-table.table-5 .ptable-item.featured-item .ptable-action a:hover {
+.pricing-table.table-5 .ptable-item.featured-item .ptable-action button:hover {
     color: #519B37;
     background: white;
 }

@@ -6,6 +6,9 @@ const cors = require('cors');
 const LocalStrategy = require('passport-local');
 const flash = require('connect-flash');
 const multer = require('multer');
+    
+const creditcard = require('creditcard.js');
+  
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -286,6 +289,23 @@ app.get('/get_houses_data', (req, res) => {
 app.get('/join', (req,res)=>{
     res.render('join');
 });
+
+
+app.post('/subscribe', (req,res)=>{
+    res.render("payment", { Plan : req.body.Package, Price : req.body.price});
+})
+
+
+
+
+app.post('/cardpayment', (req,res)=>{
+console.log(creditcard.getCreditCardNameByNumber(req.body.card_number));
+console.log(creditcard.isExpirationDateValid(req.body.expiry_month, req.body.expiry_year))
+alert(creditcard.getCreditCardNameByNumber(req.body.card_number));
+
+});
+
+
 
 app.listen(process.env.port || process.env.PORT || 5000, () => {
     console.log("App Started at port 5000");
