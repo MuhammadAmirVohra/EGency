@@ -326,7 +326,7 @@ app.get('/get_houses_data', (req, res) => {
 
 app.get('/get_agents_data', (req, res) => {
     console.log("Android App Request")
-    connection.query('select * from users where Verified = 1 and ID <> 1', (err, data) => {
+    connection.query('Select `Name`,`Email`,`Contact`,`Picture`,`Address` from users where Verified = 1 and ID <> 1', (err, data) => {
         if (err) {
             console.log(err.message);
         }
