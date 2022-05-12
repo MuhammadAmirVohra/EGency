@@ -35,11 +35,17 @@ const e = require('connect-flash');
 const { query } = require('express');
 
 const connection = mysql.createConnection({
-    host: "localhost",
+    // host: "localhost",
+    // port: 3306,
+    // user: "root",
+    // password: "admin",
+    // database: "sys"
+
+    host: "begjanzzdeyfqpxuh3rc-mysql.services.clever-cloud.com",
     port: 3306,
-    user: "root",
-    password: "admin",
-    database: "sys"
+    user: "umaoznfjn6sbocyl",
+    password: "WdCBr0MUQi3EuxEK2IqP",
+    database: "begjanzzdeyfqpxuh3rc"
 
     // host: "db4free.net",
     // port: 3306,
