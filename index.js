@@ -283,6 +283,9 @@ app.get('/get_houses_data', (req, res) => {
     })
 })
 
+app.get('/join', (req,res)=>{
+    res.render('join');
+});
 
 app.listen(process.env.port || process.env.PORT || 5000, () => {
     console.log("App Started at port 5000");
