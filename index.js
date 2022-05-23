@@ -41,11 +41,18 @@ const connection = mysql.createConnection({
     // password: "admin",
     // database: "sys"
 
-    host: "begjanzzdeyfqpxuh3rc-mysql.services.clever-cloud.com",
+    // host: "begjanzzdeyfqpxuh3rc-mysql.services.clever-cloud.com",
+    // port: 3306,
+    // user: "umaoznfjn6sbocyl",
+    // password: "WdCBr0MUQi3EuxEK2IqP",
+    // database: "begjanzzdeyfqpxuh3rc"
+
+
+    host: "database.cluster-cfihq57mag6f.us-east-1.rds.amazonaws.com",
     port: 3306,
-    user: "umaoznfjn6sbocyl",
-    password: "WdCBr0MUQi3EuxEK2IqP",
-    database: "begjanzzdeyfqpxuh3rc"
+    user: "admin",
+    password: "vohra1998",
+    database: "sys"
 
     // host: "db4free.net",
     // port: 3306,
